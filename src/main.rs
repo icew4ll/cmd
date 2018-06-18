@@ -15,8 +15,6 @@ macro_rules! vec_of_strings {
 
 // main cli app
 fn main() {
-    let p = env::current_dir().unwrap();
-    println!("The current directory is {}", p.display());
     let matches = App::new("MyApp")
         .version("1.0")
         .author("ice")
@@ -29,6 +27,7 @@ fn main() {
         match o {
             "dot" => dot(),
             "cmd" => gitpush(r"/m/cmd".to_string()),
+            "vim" => gitpush(r"/m/vim".to_string()),
             "b" => build(),
             _ => println!("0"),
         }
@@ -72,6 +71,8 @@ fn gitpush(dir: String) {
 }
 
 fn build() {
+    let p = env::current_dir().unwrap();
+    println!("The current directory is {}", p.display());
     let cmd = format!("cd {}/m/cmd;cargo build", dotenv!("HOME"));
     cmd!("sh", "-c", cmd).run().unwrap();
 }
