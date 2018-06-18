@@ -58,7 +58,6 @@ fn dot() {
 
 fn gitpush(dir: String) {
     let utc: DateTime<Utc> = Utc::now();
-    println!("{}", utc);
     let gitpush = format!(
         "cd {}{};git add -A;git commit -m \"{}\";git push",
         dotenv!("HOME"),
