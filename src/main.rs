@@ -18,10 +18,10 @@ fn main() {
         .version("1.0")
         .author("ice")
         .about("git cli")
-        .arg(Arg::with_name("output").help("function to exec").index(1))
+        .arg(Arg::with_name("input").help("function to exec").index(1))
         .get_matches();
 
-    if let Some(o) = matches.value_of("output") {
+    if let Some(o) = matches.value_of("input") {
         println!("INPUT: {}", o);
         match o {
             "dot" => dot(),
