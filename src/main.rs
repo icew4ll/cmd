@@ -7,6 +7,7 @@ extern crate clap;
 
 use chrono::prelude::*;
 use clap::{App, Arg};
+use std::env;
 
 macro_rules! vec_of_strings {
     ($($x:expr),*) => (vec![$($x.to_string()),*]);
@@ -14,6 +15,8 @@ macro_rules! vec_of_strings {
 
 // main cli app
 fn main() {
+    let p = env::current_dir().unwrap();
+    println!("The current directory is {}", p.display());
     let matches = App::new("MyApp")
         .version("1.0")
         .author("ice")
