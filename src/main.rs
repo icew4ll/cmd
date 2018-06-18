@@ -25,6 +25,7 @@ fn main() {
         println!("INPUT: {}", o);
         match o {
             "dot" => dot(),
+            "cmd" => gitpush(r"/m/cmd".to_string()),
             "b" => build(),
             _ => println!("0"),
         }
