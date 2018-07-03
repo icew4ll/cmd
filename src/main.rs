@@ -28,6 +28,7 @@ fn main() {
             "dot" => dot(),
             "cmd" => gitpush(r"/m/cmd".to_string()),
             "vim" => gitpush(r"/m/vim".to_string()),
+            "psp" => gitpush(r"/m/psp".to_string()),
             "b" => build(),
             _ => println!("0"),
         }
